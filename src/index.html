@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content=" Learn to code by watching others. See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. "
+    />
+    <meta name="author" content="geomydas" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <script src="./script.js" defer></script>
+    <style>
+      @font-face {
+        font-style: normal;
+        font-weight: 400;
+        src: url("../fonts/poppins-v21-latin-regular.woff2") format("woff2");
+        font-family: "Poppins";
+        font-display: swap;
+      }
+      @font-face {
+        font-style: normal;
+        font-weight: 500;
+        src: url("../fonts/poppins-v21-latin-500.woff2") format("woff2");
+        font-family: "Poppins";
+        font-display: swap;
+      }
+      @font-face {
+        font-style: normal;
+        font-weight: 600;
+        src: url("../fonts/poppins-v21-latin-600.woff2") format("woff2");
+        font-family: "Poppins";
+        font-display: swap;
+      }
+      @font-face {
+        font-style: normal;
+        font-weight: 700;
+        src: url("../fonts/poppins-v21-latin-700.woff2") format("woff2");
+        font-family: "Poppins";
+        font-display: swap;
+      }
+    </style>
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+  <body
+    class="flex flex-col bg-red bg-[url(../images/bg-intro-mobile.png)] justify-center min-h-screen items-center px-4 py-16 font-poppins"
+  >
+    <main
+      class="md:grid md:grid-cols-2 md:grid-rows-1 md:items-center w-full md:max-w-7xl"
+    >
+      <hgroup class="mb-6 md:mb-0">
+        <h1
+          class="font-bold text-center text-white text-2xl md:text-left mb-4 md:text-5xl"
+        >
+          Learn to code by watching others
+        </h1>
+        <p class="font-medium text-white md:text-left text-center">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </hgroup>
+      <div>
+        <p class="text-white bg-violet rounded-md p-4 text-center mb-6">
+          <strong class="font-bold">Try it free 7 days </strong>
+          then $20/mo. thereafter
+        </p>
+        <form
+          class="rounded-md flex flex-col gap-4 bg-white p-4"
+          id="form"
+          action=""
+          method="post"
+          novalidate
+        >
+          <div>
+            <label class="sr-only" for="first-name">First Name</label
+            ><input
+              class="w-full font-semibold text-brown border-1 border-gray rounded-md p-2"
+              id="first-name"
+              type="name"
+              name="first-name"
+              required
+              aria-required="true"
+              aria-invalid="false"
+              G
+              placeholder="First Name"
+              aria-describedby="first-name-error-message"
+            /><span
+              class="hidden text-right italic text-red"
+              id="first-name-error-message"
+            ></span>
+          </div>
+          <div>
+            <label class="sr-only" for="last-name">Last Name</label
+            ><input
+              class="w-full font-semibold text-brown border-1 border-gray rounded-md p-2"
+              id="last-name"
+              type="name"
+              name="last-name"
+              required
+              aria-required="true"
+              aria-invalid="false"
+              placeholder="Last Name"
+              aria-describedby="last-name-error-message"
+            /><span
+              class="hidden text-right italic text-red"
+              id="last-name-error-message"
+            ></span>
+          </div>
+          <div>
+            <label class="sr-only" for="email">Email Address</label
+            ><input
+              class="w-full font-semibold text-brown border-1 border-gray rounded-md p-2"
+              id="email"
+              type="email"
+              name="email"
+              required
+              aria-required="true"
+              aria-invalid="false"
+              placeholder="Email"
+              aria-describedby="email-error-message"
+            /><span
+              class="hidden text-right italic text-red"
+              id="email-error-message"
+            ></span>
+          </div>
+          <div>
+            <label class="sr-only" for="password">Password</label
+            ><input
+              class="w-full font-semibold text-brown border-1 border-gray rounded-md p-2"
+              id="password"
+              type="password"
+              name="password"
+              required
+              aria-required="true"
+              aria-invalid="false"
+              aria-describedby="password-error-message"
+              placeholder="Password"
+            /><span
+              class="hidden text-right italic text-red"
+              id="password-error-message"
+            ></span>
+          </div>
+          <button
+            class="text-white text-center bg-green rounded-md font-bold tracking-widest uppercase p-4"
+            type="submit"
+          >
+            Claim your free trial
+          </button>
+          <p class="text-center px-4 text-sm text-gray">
+            By clicking the button, you are agreeing to our
+            <a class="text-red font-bold" href="">Terms and Services</a>
+          </p>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

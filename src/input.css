@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@theme {
+  --font-family-poppins: "Poppins", sans-serif;
+  --color-red: hsl(0, 100%, 74%);
+  --color-green: hsl(154, 59%, 51%);
+  --color-violet: hsl(248, 32%, 49%);
+  --color-brown: hsl(249, 10%, 26%);
+  --color-gray: hsl(246, 25%, 77%);
+}
+@layer base {
+  @import "../node_modules/josh-reset/josh-reset.min.css";
+}
