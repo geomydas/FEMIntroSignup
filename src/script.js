@@ -5,40 +5,67 @@ const inputEmail = document.querySelector("#email");
 const inputPassword = document.querySelector("#password");
 const inputs = [inputFirstName, inputLastName, inputPassword];
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+function inputInvalid(input) {
+  input.classList.add("border-red");
+  input.classList.remove("border-gray");
+  input.classList.add("text-red");
+  input.classList.remove("text-brown");
+  input.setAttribute("aria-invalid", "true");
+  input.nextElementSibling.classList.remove("hidden");
+  input.nextElementSibling.classList.add("block");
+  input.nextElementSibling.textContent = `${input.placeholder} cannot be empty`;
+}
 
+function inputValid(input) {
+  input.classList.remove("border-red");
+  input.classList.add("border-gray");
+  input.classList.remove("text-red");
+  input.classList.add("text-brown");
+  input.setAttribute("aria-invalid", "false");
+  input.nextElementSibling.classList.add("hidden");
+  input.nextElementSibling.classList.remove("block");
+  input.nextElementSibling.textContent = "";
+}
+
+function validateInput() {
   inputs.forEach((input) => {
     if (!input.validity.valid) {
-      input.classList.add("border-red");
-      input.classList.remove("border-gray");
-      input.classList.add("text-red");
-      input.classList.remove("text-brown");
-      input.nextElementSibling.classList.remove("hidden");
-      input.nextElementSibling.classList.add("block");
-      input.nextElementSibling.textContent = `${input.placeholder} cannot be empty`;
+      inputInvalid(input);
+    }
+
+    if (input.validity.valid) {
+      inputValid(input);
     }
   });
+}
 
+function validateEmail(email) {
   const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  const emailValid = regexEmail.test(inputEmail.value);
+  const emailValid = regexEmail.test(email.value);
 
   if (!emailValid) {
-    input.classList.add("border-red");
-    input.classList.remove("border-gray");
-    input.classList.add("text-red");
-    input.classList.remove("text-brown");
-    inputEmail.nextElementSibling.classList.remove("hidden");
-    inputEmail.nextElementSibling.classList.add("block");
-    inputEmail.nextElementSibling.textContent = `Looks like this is not an email`;
+    inputInvalid(email);
   }
 
+  if (emailValid) {
+    inputValid(email);
+  }
+}
+
+function resetForm() {
   if (
     inputFirstName.validity.valid &&
     inputLastName.validity.valid &&
-    inputPassword.validity.valid &&
-    emailValid
+    inputEmail.validity.valid &&
+    inputPassword.validity.valid
   ) {
     form.reset();
   }
+}
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  validateInput();
+  validateEmail(inputEmail);
+  resetForm();
 });
