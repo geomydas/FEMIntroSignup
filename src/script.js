@@ -1,8 +1,8 @@
-const form = document.querySelector("#form");
-const inputFirstName = document.querySelector("#first-name");
-const inputLastName = document.querySelector("#last-name");
-const inputEmail = document.querySelector("#email");
-const inputPassword = document.querySelector("#password");
+const form = document.querySelector("[data-js='form']");
+const inputFirstName = document.querySelector("[data-js='first-name']");
+const inputLastName = document.querySelector("[data-js='last-name]");
+const inputEmail = document.querySelector("[data-js='email']");
+const inputPassword = document.querySelector("[data-js='password']");
 const inputs = [inputFirstName, inputLastName, inputPassword];
 
 function inputInvalid(input) {
